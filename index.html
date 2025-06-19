@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cryptomnesia</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     @font-face {
       font-family: "GypsyCurse-Regular";
@@ -167,8 +168,10 @@
 
   <!-- SOUND EFFECTS -->
   <audio id="flipSound" src="sounds/card.mp3" preload="auto"></audio>
+  <audio id="matchSound" src="sounds/match.mp3" preload="auto"></audio>
   <audio id="winSound" src="sounds/win.mp3" preload="auto"></audio>
   <audio id="highlightSound" src="sounds/highlight.mp3" preload="auto"></audio>
+
   <script>
     const gameContainer = document.getElementById("game");
     const winScreen = document.getElementById("winScreen");
@@ -176,8 +179,8 @@
     const titleText = document.getElementById("titleText");
 
     const flipSound = document.getElementById("flipSound");
-    const winSound = document.getElementById("winSound");
     const matchSound = document.getElementById("matchSound");
+    const winSound = document.getElementById("winSound");
     const highlightSound = document.getElementById("highlightSound");
 
     const totalPairs = 9;
@@ -271,7 +274,6 @@
       setupGame();
     }
 
-    // Highlight sound
     sidebar.addEventListener("mousedown", (e) => {
       if (e.button === 0) {
         highlightSound.currentTime = 0;
