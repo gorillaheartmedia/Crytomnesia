@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cryptomnesia</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     @font-face {
       font-family: "GypsyCurse-Regular";
@@ -166,21 +165,18 @@
     <button onclick="restartGame()">Play Again</button>
   </div>
 
-  <!-- SOUND EFFECTS -->
-  
-  <audio id="matchSound" src="sounds/card.mp3" preload="auto"></audio>
+  <!-- SOUND EFFECTS (flipSound removed) -->
   <audio id="winSound" src="sounds/win.mp3" preload="auto"></audio>
   <audio id="highlightSound" src="sounds/highlight.mp3" preload="auto"></audio>
+  <audio id="matchSound" src="sounds/card.mp3" preload="auto"></audio>
 
   <script>
     const gameContainer = document.getElementById("game");
     const winScreen = document.getElementById("winScreen");
     const sidebar = document.getElementById("sidebar");
-    const titleText = document.getElementById("titleText");
 
-    const flipSound = document.getElementById("flipSound");
-    const matchSound = document.getElementById("matchSound");
     const winSound = document.getElementById("winSound");
+    const matchSound = document.getElementById("matchSound");
     const highlightSound = document.getElementById("highlightSound");
 
     const totalPairs = 9;
@@ -230,8 +226,6 @@
           if (card.classList.contains("flipped") || flippedCards.length >= 2) return;
 
           card.classList.add("flipped");
-          flipSound.currentTime = 0;
-          flipSound.play();
           flippedCards.push(card);
 
           if (flippedCards.length === 2) {
